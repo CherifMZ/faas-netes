@@ -119,6 +119,8 @@ func updateDeploymentSpec(
 
 		deployment.Spec.Template.Spec.NodeSelector = createSelector(request.Constraints)
 
+		deployment.Spec.Template.Spec.SchedulerName = "my-scheduler"
+
 		labels := map[string]string{
 			"faas_function": request.Service,
 			"uid":           fmt.Sprintf("%d", time.Now().Nanosecond()),

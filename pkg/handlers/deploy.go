@@ -236,6 +236,7 @@ func makeDeploymentSpec(request types.FunctionDeployment, existingSecrets map[st
 					},
 					RestartPolicy: corev1.RestartPolicyAlways,
 					DNSPolicy:     corev1.DNSClusterFirst,
+					SchedulerName: "my-scheduler",
 				},
 			},
 		},
